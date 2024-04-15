@@ -1,9 +1,13 @@
 import { createStore, applyMiddleware, compose, combineReducers } from 'redux';
-import thunk from 'redux-thunk';
-
+import { thunk } from 'redux-thunk';
+import session from "./session";
+import errors from "./errors";
+import tweets from "./tweets";
 const rootReducer = combineReducers({
-  // Add reducers here
-});
+    tweets,
+    session,
+    errors
+  });
 
 let enhancer;
 if (import.meta.env.MODE === "production") {

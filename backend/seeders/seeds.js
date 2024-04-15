@@ -47,7 +47,7 @@ for (let i = 0; i < NUM_SEED_TWEETS; i++) {
 mongoose
   .connect(db, { useNewUrlParser: true })
   .then(() => {
-    console.log('Connected to MongoDB successfully');
+    // console.log('Connected to MongoDB successfully');
     insertSeeds();
   })
   .catch(err => {
@@ -57,7 +57,7 @@ mongoose
 
 // Reset and seed db
 const insertSeeds = () => {
-  console.log("Resetting db and seeding users and tweets...");
+//   console.log("Resetting db and seeding users and tweets...");
 
   User.collection.drop()
                  .then(() => Tweet.collection.drop())
