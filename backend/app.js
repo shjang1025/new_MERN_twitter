@@ -17,6 +17,8 @@
 
 // module.exports = app;
 require('./models/User');
+require('./config/passport'); 
+const passport = require('passport'); 
 
 const express = require("express");
 const cookieParser = require('cookie-parser');
@@ -36,7 +38,7 @@ app.use(logger('dev'));
 app.use(express.json());
 app.use(express.urlencoded({ extended: false }));
 app.use(cookieParser());
-
+app.use(passport.initialize());
 // Security Middleware
 if (!isProduction) {
   // Enable CORS only in development because React will be on the React
