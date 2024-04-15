@@ -3,6 +3,8 @@
 /**
  * Module dependencies.
  */
+const Tweet = require('../models/Tweet')
+const User = require('../models/User')
 
 const app = require('../app.js');
 const debug = require('debug');
@@ -33,11 +35,6 @@ mongoose
   .connect(db, { useNewUrlParser: true })
   .then(() => {
     debug('Connected to MongoDB successfully');
-
-    /**
-     * Listen on provided port, on all network interfaces.
-     */
-
     server.listen(port);
   })
   .catch(err => debug(err));
